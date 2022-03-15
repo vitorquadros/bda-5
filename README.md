@@ -1,4 +1,4 @@
-# CSTSI-BDA: Atividade Aual 5 - Filtros com Firebase
+# CSTSI-BDA: Atividade Aual 5 - Regras e Autenticação
 
 <!-- ## Exemplo: -->
 <!-- 
