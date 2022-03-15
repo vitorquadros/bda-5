@@ -1,8 +1,8 @@
 # CSTSI-BDA: Atividade Aual 5 - Regras e Autenticação
 
-<--## Exemplo:-->
+<!--## Exemplo:-->
  
-<--[![exemplo](exemplo.gif)](exemplo.gif)-->
+<!--[![exemplo](exemplo.gif)](exemplo.gif)-->
 
 Crie um projeto no Firebase com o Realtime Database e importe este arquivo:
 
