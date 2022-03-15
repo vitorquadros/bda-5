@@ -1,19 +1,19 @@
-# CSTSI-BDA: Atividade Aual 4 - Filtros com Firebase
+# CSTSI-BDA: Atividade Aual 5 - Filtros com Firebase
 
-## Exemplo:
-
-[![exemplo](exemplo.gif)](exemplo.gif)
+<!-- ## Exemplo: -->
+<!-- 
+[![exemplo](exemplo.gif)](exemplo.gif) -->
 
 Crie um projeto no Firebase com o Realtime Database e importe este arquivo:
 
 ***[atividade-aulas-03-4-default-rtdb-export.json](https://raw.githubusercontent.com/g1ll/exemplo_atividade_aula03/main/database/atividade-aulas-03-4-default-rtdb-export.json)***.
 
 Faça o clone do projeto com o comando git:
->git clone https://github.com/g1ll/cstsi_bda_atividade_aula_04.git
+>git clone https://github.com/g1ll/cstsi_bda_atividade_aula_05.git
 
-Após o git fazer o download do projeto, entre na pasta ***cstsi_bda_atividade_aula_04***
+Após o git fazer o download do projeto, entre na pasta ***cstsi_bda_atividade_aula_05***
 
->cd cstsi_bda_atividade_aula_04
+>cd cstsi_bda_atividade_aula_05
 
 Dentro da pasta execute o comando do npm para instalar as dependências, incluindo o Firebase:
 
@@ -48,28 +48,35 @@ Caso a porta 3000 do seu computador já esteja ocupada, o npm irá lhe perguntar
 
 Agora o projeto cliente está pronto para a atividade!
 
-## Implementando as funções de Firebase/ProdutosDao.js
+## Implementando as funções de Firebase/firebase.js
 
 **NÃO HÁ NECESSIDADE DE ALTERAR OS CÓDIGOS QUE NÃO SEJAM DO ARQUIVO *ProdutosDao.js***
 
-A atividade consiste da implementação das seguintes funções no módulo **[Firebase/ProdutoDao](https://github.com/g1ll/cstsi_bda_atividade_aula_04/blob/main/src/components/Firebase/ProdutosDao.js)** :
+A atividade consiste da implementação das seguintes funções no módulo **[Firebase/firebase](https://github.com/g1ll/cstsi_bda_atividade_aula_05/blob/main/src/components/Firebase/firebase.js)** :
 
-1 - ***GetOrderByChild(order, db, callback)***: Recebe o termo para a ordenação (***order***), uma referência ao banco de dados (***db***) e a referência à função de ***callback***, a qual deverá ser repassada ao evento apropriado do firebase.
+1 - ***doCreateUserWithEmailAndPassword(email, password)***: Recebe o Email e a Senha do Usuário e deverá criar uma nova conta no Firebase Authentication, além de cadastrar este usuário no nó */users/* para que se possa implementar as regras de segurança.
 
-2 - ***getFilterByChild(filter,value, db,callback)***: Recebe o nome do filtro a ser aplicado (***filter***), ou sejam filho do nó (***atributo***). Em value a função recebe o valor a ser filtrado. Os demais parâmetros são iguais a função anterior. Importante: esta função deverá retornar os dados do banco que sejam iguais ou maiores do que o valor do value.
+2 - ***doSignInWithEmailAndPassword(email, password)***: Recebe os parêmtros de *email* e *senha* do usuário e deverá realizar o login guardando as credenciais na propriedade *credentials* da classe Firebase. O método também deverá atribuir o booleano TRUE ao atributo da classe *this.isLogged* em caso do login ser concluído com sucesso. Ao final a função deverá retornar as credenciais.
 
-3 - ***getMostExpensive(db, setValue, list)***: Esta função solicitará ao firebase os resultados e ordená-los pelos mais caros. Esta função recebe uma referência ao banco de dados (***db***). Esta função recebe como segundo parâmetro (***setValue***) a referêrencia da função que altera os dados de estado do componente (***[ListProds](https://github.com/g1ll/cstsi_bda_atividade_aula_04/blob/main/src/components/App/listProds.js)***) responsável pela visualização dos resultados. E por fim, a referência ao atributo que guarda os valores da lista retornada pelo firebase (***list***).
+3 -  ***doSignOut()***: Não recebe parâmetros e devera executar o método adequado para desconectar o usuário.
 
- Devido a natureza desta função, ou seja, dados ordenados no cliente, precisaremos implenetar o *callbak* e portanto usar  ***setValue([...list])*** quando os resultados estiverem prontos para serem repassados o componente do react. Quarde os resultados prontos na variável ***list*** e após a repasse para o ***setValue***. A variável ***list*** é um array, portanto use os métodos de manipulação de arrays (*push*,*shift*, *unshift*,*pop*,*reverse*, *map*, *filter*, etc...)
+4 - Usando os métodos para regras de segurança, implemente uma regra para que apenas os usuários logados com o atributo ***admin*** possam escrever no nó de *produtos*.
 
- 4 - ***getMostCheap(db, callback)***: Essa função deverá solcitar ao firebase a lista de produtos ordenada pelos menores preços, de menor a maior. Não é necessário desenvolver o *callback*, apenas repassá-lo para o evento apropriado do firebase.
-
- 5 - ***getPriceRange(value, db, callback)***: Esta função deverá solicitar um intervalo de valores, menores ou iguais ao definido. Como parâmetros, a função recebe o valor para a filtragem dos preços iguais ou menores do que o ***value***, uma referência ao banco de dados (***db***) e a referência a função de ***callback***, a qual será repassada ao evento do firebase.
+5 - Salve na pasta ***src/components/Firebase*** do projeto, uma pasta chamada dump com o arquivo json do seu banco do realtime database e outro arquivo json com as suas regras
 
 
 ## Referências:
 
-[Filtro de Dados no Firebase](https://firebase.google.com/docs/database/web/lists-of-data#filtering_data)
+[Regras no Firebase](https://firebase.google.com/docs/database/security/get-started?hl=pt)
+
+[Sintaxe de Regras no Firebase](https://firebase.google.com/docs/database/security/core-syntax?hl=pt)
+
+[Regras Condicionais no Firebase](https://firebase.google.com/docs/database/security/rules-conditions?hl=pt)
+
+[Regras de Indexação](https://firebase.google.com/docs/database/security/indexing-data?hl=pt)
+
+
+[Autenticação no Firebase](https://firebase.google.com/docs/auth/web/password-auth?hl=pt)
 
 [Firebase Instalação e Configuração](https://firebase.google.com/docs/database/web/start?hl=pt)
 
