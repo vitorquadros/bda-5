@@ -23,7 +23,7 @@ class Firebase {
         this.app = initializeApp(firebaseConfig)
         this.db = getDatabase(this.app)
         this.auth = getAuth();
-        this.isLogged = this.isLogged ? true : false;
+        this.isLogged = false;
         this.credentials =null;
     }
 
