@@ -14,7 +14,7 @@ function SignInPage() {
     return (
         <div className={'signPanel'}>
             <h3>Entrar:</h3>
-            <Navigation /><hr />
+            <Navigation />
             <SignInFormFirebase />
             <SignUpLink />
         </div>
