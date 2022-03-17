@@ -13,13 +13,7 @@ const Navigation = (props) => ((props.logout) ?
             </li>
         </ul>
     </div>
-    : <div>
-        <ul>
-            <li>
-            
-            </li>
-        </ul>
-    </div>
+    : <></>
 )
 
 export default withFirebase(Navigation);
