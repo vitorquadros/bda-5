@@ -33,7 +33,7 @@ class Firebase {
            //implemente aqui a função para criar um usuário
            throw new Error("Função indisponível") //remova essa linha
         } catch (error) {
-            console.log(error.message)
+            console.error(error.message)
             throw error;
         }
     }
@@ -47,6 +47,7 @@ class Firebase {
            //implemente aqui função logar o usuario
            throw new Error("Função Indisponível!!") //remova essa linha
         } catch (error) {
+            console.error(error.message)
             throw error;
         }
     }
