@@ -15,7 +15,6 @@ import {
 } from "firebase/database"
 
 function getOrderByChild(order,db,callback){
-    //Exemplo
     console.log(order);
     const refDB = ref(db,'produtos/');
     const consulta = query(refDB,orderByChild(order))
