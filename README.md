@@ -58,7 +58,7 @@ A atividade consiste da implementação das seguintes funções no módulo **[Fi
 
 1 - ***doCreateUserWithEmailAndPassword(email, password)***: Recebe o Email e a Senha do Usuário e deverá criar uma nova conta no Firebase Authentication, além de cadastrar este usuário no nó */users/* para que se possa implementar as regras de segurança.
 
-2 - ***doSignInWithEmailAndPassword(email, password)***: Recebe os parêmtros de *email* e *senha* do usuário e deverá realizar o login guardando as credenciais na propriedade *credentials* da classe Firebase. O método também deverá atribuir o booleano TRUE ao atributo da classe *this.isLogged* em caso do login ser concluído com sucesso. Ao final a função deverá retornar as credenciais.
+2 - ***doSignInWithEmailAndPassword(email, password)***: Recebe os parêmtros de *email* e *senha* do usuário e deverá realizar o login guardando as credenciais na propriedade *credentials* da classe Firebase. O método também deverá atribuir o booleano TRUE ao atributo da classe *this.isLogged* em caso do login ser concluído com sucesso. Ao final a função deverá retornar o ***usuário autenticado*** (**this.credentials.user**).
 
 3 -  ***doSignOut()***: Não recebe parâmetros e devera executar o método adequado para desconectar o usuário.
 
