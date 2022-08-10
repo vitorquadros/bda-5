@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import {
-    getAuth,
+    getAuth
 } from 'firebase/auth';
 import {
     getDatabase
@@ -43,6 +43,7 @@ class Firebase {
             /**
             Quando o usuário estiver logado atribua o valor TRUE
             ao atributo this.isLogged e as credenciais ao atributo this.credentials
+            deverá retornar a propriedade user do atributo this.credentials
             */
            //implemente aqui função logar o usuario
            throw new Error("Função Indisponível!!") //remova essa linha
@@ -52,8 +53,7 @@ class Firebase {
         }
     }
 
-    doSignOut = () => { 
-        //implemente aqui
+    doSignOut = () => {
     };
 }
 
