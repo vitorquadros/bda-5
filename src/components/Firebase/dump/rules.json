@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "produtos": {
+      ".read": true,
+      ".write": "root.child('users/'+auth.uid+'/admin').val() == true"
+    },
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
